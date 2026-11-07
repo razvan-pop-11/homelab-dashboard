@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homelab Hub - Material Design 3 Dark</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="lovable.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body class="bg-[#0c0e13] text-[#e2e2e6] min-h-screen p-6 md:p-10 antialiased">
+
+  <!-- M3 Top App Bar -->
+  <header class="max-w-7xl mx-auto flex items-center justify-between pb-6 mb-8 border-b border-white/[0.08]">
+    <div class="flex items-center gap-4">
+      <div class="w-12 h-12 rounded-2xl bg-[#1a446c]/40 border border-[#a8c7fa]/20 flex items-center justify-center text-[#a8c7fa]">
+        <span class="material-symbols-rounded text-2xl">dns</span>
+      </div>
+      <div>
+        <h1 class="text-xl font-bold tracking-tight text-[#f1f0f4]">Homelab Control Center</h1>
+        <p class="text-xs text-[#8c9199]">Material Design 3 Dark Standard</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <div class="m3-chip text-[#6dd58c] border-[#6dd58c]/20 bg-[#0a3818]/30">
+        <span class="m3-dot online"></span> All Systems Operational
+      </div>
+    </div>
+  </header>
+
+  <!-- M3 Hardware Telemetry Bar -->
+  <section class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+    <div class="m3-card p-5">
+      <div class="flex items-center justify-between text-[#8c9199] text-xs font-medium mb-3">
+        <span>CPU ALLOCATION</span>
+        <span class="material-symbols-rounded text-lg text-[#a8c7fa]">memory</span>
+      </div>
+      <div class="text-2xl font-bold m3-metric text-[#f1f0f4]">14.2%</div>
+      <div class="w-full bg-[#22262e] h-2 rounded-full mt-4 overflow-hidden">
+        <div class="bg-[#a8c7fa] h-full rounded-full transition-all duration-500" style="width: 14.2%"></div>
+      </div>
+    </div>
+
+    <div class="m3-card p-5">
+      <div class="flex items-center justify-between text-[#8c9199] text-xs font-medium mb-3">
+        <span>MEMORY (32 GB ECC)</span>
+        <span class="material-symbols-rounded text-lg text-[#6dd58c]">developer_board</span>
+      </div>
+      <div class="text-2xl font-bold m3-metric text-[#f1f0f4]">7.8 / 32 GB</div>
+      <div class="w-full bg-[#22262e] h-2 rounded-full mt-4 overflow-hidden">
+        <div class="bg-[#6dd58c] h-full rounded-full transition-all duration-500" style="width: 24.3%"></div>
+      </div>
+    </div>
+
+    <div class="m3-card p-5">
+      <div class="flex items-center justify-between text-[#8c9199] text-xs font-medium mb-3">
+        <span>PRIMARY SSD STORAGE</span>
+        <span class="material-symbols-rounded text-lg text-[#ffd566]">hard_drive</span>
+      </div>
+      <div class="text-2xl font-bold m3-metric text-[#f1f0f4]">28 / 64 GB</div>
+      <div class="w-full bg-[#22262e] h-2 rounded-full mt-4 overflow-hidden">
+        <div class="bg-[#ffd566] h-full rounded-full transition-all duration-500" style="width: 43.7%"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- M3 Service Cards Grid -->
+  <main class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <!-- Service Card 1: Proxmox VE -->
+    <a href="https://192.168.1.134:8006" target="_blank" class="m3-card p-5 flex flex-col justify-between group">
+      <div>
+        <div class="flex items-center justify-between mb-4">
+          <div class="w-10 h-10 rounded-xl bg-[#14171d] border border-white/[0.08] flex items-center justify-center text-[#a8c7fa] group-hover:bg-[#1a446c]/40 group-hover:border-[#a8c7fa]/30 transition-all">
+            <span class="material-symbols-rounded">cloud</span>
+          </div>
+          <span class="m3-chip text-[#6dd58c] border-[#6dd58c]/20 py-1 px-2.5">
+            <span class="m3-dot online"></span> Online
+          </span>
+        </div>
+        <h3 class="text-base font-semibold text-[#f1f0f4] group-hover:text-[#a8c7fa] transition-colors">Proxmox VE</h3>
+        <p class="text-xs text-[#8c9199] mt-1.5 leading-relaxed">Bare-metal virtualization hypervisor and VM manager.</p>
+      </div>
+      <div class="mt-5 pt-3 border-t border-white/[0.06] flex items-center justify-between text-xs text-[#8c9199]">
+        <span>Port 8006 (HTTPS)</span>
+        <span class="material-symbols-rounded text-sm opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all">north_east</span>
+      </div>
+    </a>
+
+    <!-- Service Card 2: Home Assistant -->
+    <a href="http://192.168.1.142:8123" target="_blank" class="m3-card p-5 flex flex-col justify-between group">
+      <div>
+        <div class="flex items-center justify-between mb-4">
+          <div class="w-10 h-10 rounded-xl bg-[#14171d] border border-white/[0.08] flex items-center justify-center text-[#7adae8] group-hover:bg-[#004f58]/40 group-hover:border-[#7adae8]/30 transition-all">
+            <span class="material-symbols-rounded">home</span>
+          </div>
+          <span class="m3-chip text-[#6dd58c] border-[#6dd58c]/20 py-1 px-2.5">
+            <span class="m3-dot online"></span> Online
+          </span>
+        </div>
+        <h3 class="text-base font-semibold text-[#f1f0f4] group-hover:text-[#7adae8] transition-colors">Home Assistant OS</h3>
+        <p class="text-xs text-[#8c9199] mt-1.5 leading-relaxed">Central smart home automation and Zigbee/BLE hub.</p>
+      </div>
+      <div class="mt-5 pt-3 border-t border-white/[0.06] flex items-center justify-between text-xs text-[#8c9199]">
+        <span>192.168.1.142:8123</span>
+        <span class="material-symbols-rounded text-sm opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all">north_east</span>
+      </div>
+    </a>
+
+    <!-- Service Card 3: Frigate NVR -->
+    <a href="http://192.168.1.134:5000" target="_blank" class="m3-card p-5 flex flex-col justify-between group">
+      <div>
+        <div class="flex items-center justify-between mb-4">
+          <div class="w-10 h-10 rounded-xl bg-[#14171d] border border-white/[0.08] flex items-center justify-center text-[#c3c0ff] group-hover:bg-[#3b3874]/40 group-hover:border-[#c3c0ff]/30 transition-all">
+            <span class="material-symbols-rounded">videocam</span>
+          </div>
+          <span class="m3-chip text-[#6dd58c] border-[#6dd58c]/20 py-1 px-2.5">
+            <span class="m3-dot online"></span> Online
+          </span>
+        </div>
+        <h3 class="text-base font-semibold text-[#f1f0f4] group-hover:text-[#c3c0ff] transition-colors">Frigate NVR</h3>
+        <p class="text-xs text-[#8c9199] mt-1.5 leading-relaxed">Real-time AI object detection and video recording.</p>
+      </div>
+      <div class="mt-5 pt-3 border-t border-white/[0.06] flex items-center justify-between text-xs text-[#8c9199]">
+        <span>Port 5000</span>
+        <span class="material-symbols-rounded text-sm opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all">north_east</span>
+      </div>
+    </a>
+
+    <!-- Service Card 4: Ollama Local AI -->
+    <a href="http://192.168.1.134:11434" target="_blank" class="m3-card p-5 flex flex-col justify-between group">
+      <div>
+        <div class="flex items-center justify-between mb-4">
+          <div class="w-10 h-10 rounded-xl bg-[#14171d] border border-white/[0.08] flex items-center justify-center text-[#ffd566] group-hover:bg-[#412d00]/40 group-hover:border-[#ffd566]/30 transition-all">
+            <span class="material-symbols-rounded">smart_toy</span>
+          </div>
+          <span class="m3-chip text-[#6dd58c] border-[#6dd58c]/20 py-1 px-2.5">
+            <span class="m3-dot online"></span> Online
+          </span>
+        </div>
+        <h3 class="text-base font-semibold text-[#f1f0f4] group-hover:text-[#ffd566] transition-colors">Ollama AI</h3>
+        <p class="text-xs text-[#8c9199] mt-1.5 leading-relaxed">Local Large Language Model inference API.</p>
+      </div>
+      <div class="mt-5 pt-3 border-t border-white/[0.06] flex items-center justify-between text-xs text-[#8c9199]">
+        <span>Port 11434</span>
+        <span class="material-symbols-rounded text-sm opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all">north_east</span>
+      </div>
+    </a>
+  </main>
+
+</body>
+</html>

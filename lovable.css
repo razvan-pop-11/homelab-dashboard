@@ -1,0 +1,112 @@
+/* Lovable x Material Design 3 (M3 Dark Expressive) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300;400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+:root {
+  --md-surface: #0c0e13;
+  --md-surface-container-low: #14171d;
+  --md-surface-container: #1a1d24;
+  --md-surface-container-high: #22262e;
+  --md-surface-container-highest: #2b303a;
+  --md-outline-variant: rgba(255, 255, 255, 0.08);
+  --md-outline: rgba(255, 255, 255, 0.16);
+  --md-primary: #a8c7fa;
+  --md-primary-container: #1a446c;
+  --md-on-primary-container: #d3e3fd;
+  --md-success: #6dd58c;
+  --md-success-container: #0a3818;
+  --md-warning: #ffd566;
+  --md-warning-container: #412d00;
+  --md-error: #f2b8b5;
+  --md-error-container: #601410;
+}
+
+body {
+  font-family: 'Roboto Flex', 'Inter', -apple-system, sans-serif;
+  background-color: var(--md-surface);
+  color: #e2e2e6;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Material 3 Surface Card */
+.m3-card {
+  background-color: var(--md-surface-container-low);
+  border: 1px solid var(--md-outline-variant);
+  border-radius: 20px;
+  transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.m3-card:hover {
+  background-color: var(--md-surface-container);
+  border-color: var(--md-outline);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.6);
+}
+
+.m3-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: white;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.m3-card:hover::after {
+  opacity: 0.04;
+}
+
+/* M3 Chip / Pill */
+.m3-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background-color: var(--md-surface-container-high);
+  border: 1px solid var(--md-outline-variant);
+  color: #c4c7c5;
+}
+
+/* M3 Status Dot */
+.m3-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.m3-dot.online {
+  background-color: var(--md-success);
+  box-shadow: 0 0 8px rgba(109, 213, 140, 0.6);
+}
+
+.m3-dot.warning {
+  background-color: var(--md-warning);
+  box-shadow: 0 0 8px rgba(255, 213, 102, 0.6);
+}
+
+.m3-dot.offline {
+  background-color: var(--md-error);
+  box-shadow: 0 0 8px rgba(242, 184, 181, 0.6);
+}
+
+/* Tabular Numbers for Telemetry */
+.m3-metric {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+/* Material Symbols Integration */
+.material-symbols-rounded {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
